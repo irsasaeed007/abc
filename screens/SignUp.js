@@ -71,8 +71,7 @@ const SignUp = ({navigation}) => {
               onPress={() => navigation.navigate('Sign In')}
               />
             
-              <Text style={styles.text} >By registering, you confirm that you accept our <Text style ={{color:"blue"}} >Terms  of Use</Text> and <Text style ={{color:"blue"}} >Privacy Policy</Text> 
-              </Text>
+              
     
               
               <SocialSignInButtons/>

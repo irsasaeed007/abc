@@ -1,5 +1,6 @@
 {
   "expo": {
+    "jsEngine": "hermes",
     "name": "Irsa",
     "slug": "Irsa",
     "version": "1.0.0",
