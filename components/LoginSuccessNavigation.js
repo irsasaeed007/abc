@@ -4,7 +4,11 @@ import { NavigationContainer } from '@react-navigation/native';
 import { NativeBaseProvider } from 'native-base';
 import React from 'react'
 import GetStarted from '../screens/getstarted';
+import Bid from '../screens/LoginSuccessScreens/Bid';
+import FindJobs from '../screens/LoginSuccessScreens/FindJobs';
 import Homepage from '../screens/LoginSuccessScreens/Homepage';
+import Services from '../screens/LoginSuccessScreens/Services';
+import PostJob from '../screens/PostJob';
 
 export default function LoginSuccessNavigation() {
     const Tab = createBottomTabNavigator();
@@ -40,10 +44,10 @@ export default function LoginSuccessNavigation() {
                         tabBarActiveTintColor: 'tomato',
                     })}>
                     <Tab.Screen name="Homepage" component={Homepage} />
-                    <Tab.Screen name="GetStarted" component={GetStarted} />
-                    {/* <Tab.Screen name="Services" component={Services} />
-
-                    <Tab.Screen name="Post a Job" component={Post} /> */}
+                    <Tab.Screen name="Services" component={Services} />
+                    <Tab.Screen name="PostJob" component={PostJob} />
+                    <Tab.Screen name="FindJobs" component={FindJobs} />
+                    <Tab.Screen name="Bid" component={Bid} />
 
                 </Tab.Navigator>
             </NavigationContainer>
