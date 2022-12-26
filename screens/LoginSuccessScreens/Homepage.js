@@ -5,8 +5,16 @@ import { Box, VStack, Center } from "native-base";
 import Swiper from 'react-native-swiper';
 import { AntDesign } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
+import { useAuthContext } from '../../Context/AuthWrapper';
 
 export default function Homepage({ navigation }) {
+    let {token,setToken}=useAuthContext();
+
+function LogoutFunc()
+{
+    setToken('');
+}
+
     return (
 <ScrollView>
         <View>
@@ -49,6 +57,13 @@ export default function Homepage({ navigation }) {
                     <Center w="64" h="20" bg="indigo.500" rounded="md" shadow={3} >
                         <Text style={{ color: "white", fontWeight: "bold", fontSize: 20 }}><Entypo name="back-in-time" size={24} color="black" style={{ marginRight: 10 }} />
                             Recent Jobs
+                        </Text>
+                    </Center>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={()=>LogoutFunc()}>
+                    <Center w="64" h="20" bg="indigo.500" rounded="md" shadow={3} >
+                        <Text style={{ color: "white", fontWeight: "bold", fontSize: 20 }}><Entypo name="back-in-time" size={24} color="black" style={{ marginRight: 10 }} />
+                            Sign Out
                         </Text>
                     </Center>
                 </TouchableOpacity>
