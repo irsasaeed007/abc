@@ -14,7 +14,6 @@ export default function LoginSuccessNavigation() {
     const Tab = createBottomTabNavigator();
     return (
         <NativeBaseProvider>
-            <NavigationContainer>
                 <Tab.Navigator
                     screenOptions={({ route }) => ({
                         tabBarIcon: ({ focused, color, size }) => {
@@ -48,9 +47,7 @@ export default function LoginSuccessNavigation() {
                     <Tab.Screen name="PostJob" component={PostJob} />
                     <Tab.Screen name="FindJobs" component={FindJobs} />
                     <Tab.Screen name="Bid" component={Bid} />
-
                 </Tab.Navigator>
-            </NavigationContainer>
         </NativeBaseProvider>
     );
 }
