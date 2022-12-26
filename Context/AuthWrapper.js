@@ -4,7 +4,7 @@ const AuthContext = createContext();
 
 export function WrapperAuth({ children }) {
 
-  const [token,setToken]=useState('')
+  const [token,setToken]=useState('a')
   return (
     <AuthContext.Provider value={{token,setToken}}>
       {children}

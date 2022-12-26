@@ -10,6 +10,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import GetStarted from './screens/getstarted';
 import { useAuthContext } from './Context/AuthWrapper';
+import PostJob from './screens/PostJob';
+import LoginNavigations from './components/Loginnavigations';
 
 
 export default function MainApp() {
@@ -31,16 +33,17 @@ export default function MainApp() {
     else {
         return(
             <>
-            <NavigationContainer>
-                <Stack.Navigator initialRouteName="GetStarted" >
-                    <Stack.Screen name="GetStarted" component={GetStarted} />
-                </Stack.Navigator>
-            </NavigationContainer>
+            <LoginNavigations></LoginNavigations>
         </>
         )
     }
     
 }
+{/* <NavigationContainer>
+                <Stack.Navigator initialRouteName="GetStarted" >
+                    <Stack.Screen name="GetStarted" component={PostJob} />
+                </Stack.Navigator>
+            </NavigationContainer> */}
 const styles = StyleSheet.create({
     container: {
         flex: 1,
