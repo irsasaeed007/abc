@@ -1,5 +1,8 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+
+import { useAuthContext } from './Context/AuthWrapper'
+
 import ConfirmEmailScreen from './screens/ConfirmEmailScreen';
 import ForgotPasswordScreen from './screens/ForgotPasswordScreen';
 import NewPasswordScreen from './screens/NewPasswordScreen';
@@ -9,9 +12,10 @@ import SignUp from './screens/SignUp';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import GetStarted from './screens/getstarted';
-import { useAuthContext } from './Context/AuthWrapper';
+;
 import PostJob from './screens/PostJob';
-import LoginNavigations from './components/Loginnavigations';
+import LoginSuccessNavigation from './components/LoginSuccessNavigation';
+
 
 
 export default function MainApp() {
@@ -33,7 +37,7 @@ export default function MainApp() {
     else {
         return(
             <>
-            <LoginNavigations></LoginNavigations>
+            <LoginSuccessNavigation/>
         </>
         )
     }

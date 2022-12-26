@@ -8,7 +8,7 @@ import { Entypo } from '@expo/vector-icons';
 
 export default function Homepage({ navigation }) {
     return (
-
+<ScrollView>
         <View>
             <Swiper
                 loop
@@ -16,18 +16,17 @@ export default function Homepage({ navigation }) {
                 style={{ height: 250 }}
             >
                 <Image
-                    source={require('../../assets/assets/4786.jpg')}
+                    source={require('./Pics/5326050.jpg')}
                     resizeMode="center"
                     style={{ flex: 1, justifyContent: "center", alignItems: "center", height: 400, width: 300 }}
                 />
 
 
                 <Image
-                    source={require('../../assets/assets/4786.jpg')}
+                    source={require('./Pics/4786.jpg')}
                     resizeMode="center"
                     style={{ flex: 1, justifyContent: "center", alignItems: "center", height: 400, width: 300 }}
                 />
-
             </Swiper>
 
             <Box bg="#fff" alignItems="center" justifyContent="center">
@@ -36,17 +35,25 @@ export default function Homepage({ navigation }) {
             </Box>
 
             <VStack space={4} style={{ marginTop: 25 }} alignItems="center">
-                <TouchableOpacity onPress={() => navigation.navigate("Post a Job")} > <Center w="64" h="20" bg="indigo.500" rounded="md" shadow={3} >
 
-                    <Text style={{ color: "white", fontWeight: "bold", fontSize: 20 }} ><AntDesign name="upload" size={24} color="black" style={{ marginRight: 10 }} />Post a Job</Text>
+                <TouchableOpacity onPress={() => navigation.navigate("Post a Job")} >
+                    <Center w="64" h="20" bg="indigo.500" rounded="md" shadow={3} >
 
-                </Center></TouchableOpacity>
-                <TouchableOpacity> <Center w="64" h="20" bg="indigo.500" rounded="md" shadow={3} >
-
-                    <Text style={{ color: "white", fontWeight: "bold", fontSize: 20 }}><Entypo name="back-in-time" size={24} color="black" style={{ marginRight: 10 }} />Recent Jobs</Text>
-
-                </Center></TouchableOpacity>
+                        <Text style={{ color: "white", fontWeight: "bold", fontSize: 20 }} >
+                            <AntDesign name="upload" size={24} color="black" style={{ marginRight: 10 }} />
+                            Post a Job
+                        </Text>
+                    </Center>
+                </TouchableOpacity>
+                <TouchableOpacity>
+                    <Center w="64" h="20" bg="indigo.500" rounded="md" shadow={3} >
+                        <Text style={{ color: "white", fontWeight: "bold", fontSize: 20 }}><Entypo name="back-in-time" size={24} color="black" style={{ marginRight: 10 }} />
+                            Recent Jobs
+                        </Text>
+                    </Center>
+                </TouchableOpacity>
             </VStack>
         </View>
+        </ScrollView>
     );
 }

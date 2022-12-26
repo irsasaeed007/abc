@@ -1,17 +1,12 @@
-import * as React from 'react';
-import { Text, View, StyleSheet } from 'react-native';
-import Constants from 'expo-constants';
-import { NativeBaseProvider, Box } from "native-base";
-
-import { Card } from 'react-native-paper';
-import { NavigationContainer } from '@react-navigation/native';
+import { AntDesign, Ionicons } from '@expo/vector-icons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Ionicons } from '@expo/vector-icons';
-import { AntDesign } from '@expo/vector-icons';
+import { NavigationContainer } from '@react-navigation/native';
+import { NativeBaseProvider } from 'native-base';
+import React from 'react'
 import GetStarted from '../screens/getstarted';
-import Homepage from '../screens/LoginSuccessScreens/Home';
+import Homepage from '../screens/LoginSuccessScreens/Homepage';
 
-export default function LoginNavigations() {
+export default function LoginSuccessNavigation() {
     const Tab = createBottomTabNavigator();
     return (
         <NativeBaseProvider>
@@ -19,7 +14,7 @@ export default function LoginNavigations() {
                 <Tab.Navigator
                     screenOptions={({ route }) => ({
                         tabBarIcon: ({ focused, color, size }) => {
-                            if (route.name === 'Home') {
+                            if (route.name === 'Homepage') {
                                 return (
                                     <Ionicons
                                         name={
@@ -44,10 +39,11 @@ export default function LoginNavigations() {
                         tabBarInactiveTintColor: 'gray',
                         tabBarActiveTintColor: 'tomato',
                     })}>
-                    <Tab.Screen name="GetStarted" component={GetStarted} />
                     <Tab.Screen name="Homepage" component={Homepage} />
+                    <Tab.Screen name="GetStarted" component={GetStarted} />
+                    {/* <Tab.Screen name="Services" component={Services} />
 
-                
+                    <Tab.Screen name="Post a Job" component={Post} /> */}
 
                 </Tab.Navigator>
             </NavigationContainer>
