@@ -15,39 +15,46 @@ import GetStarted from './screens/getstarted';
 ;
 import PostJob from './screens/PostJob';
 import LoginSuccessNavigation from './components/LoginSuccessNavigation';
+import React, { useState } from 'react';
 
 
 
 export default function MainApp() {
     const Stack = createNativeStackNavigator();
-    let {token,setToken}=useAuthContext();
-    if(token=='')
-    {
-        return (
-            <>
-                <NavigationContainer>
-                    <Stack.Navigator initialRouteName="Login" >
-                        <Stack.Screen name="Signin" component={Signin} />
-                        <Stack.Screen name="SignUp" component={SignUp} />
+    let { token, setToken } = useAuthContext();
+
+    const [routesArr, setRouteArray] = useState([
+        {
+            key: "Signin",
+            value: Signin
+        },
+        {
+            key: "SignUp",
+            value: SignUp
+        },
+    ])
+
+
+
+    return (
+        <><NavigationContainer>
+
+            {
+                token ?
+                    <LoginSuccessNavigation />
+                    :
+                    <Stack.Navigator initialRouteName="Signin" >
+                        {routesArr.map((e, i) => { return <Stack.Screen name={e.key} key={i} component={e.value} /> })}
                     </Stack.Navigator>
-                </NavigationContainer>
-            </>
-        )
-    }
-    else {
-        return(
-            <>
-            <LoginSuccessNavigation/>
+
+            }
+        </NavigationContainer>
         </>
-        )
-    }
-    
+    )
 }
-{/* <NavigationContainer>
-                <Stack.Navigator initialRouteName="GetStarted" >
-                    <Stack.Screen name="GetStarted" component={PostJob} />
-                </Stack.Navigator>
-            </NavigationContainer> */}
+
+
+
 const styles = StyleSheet.create({
     container: {
         flex: 1,
